@@ -4,7 +4,7 @@ import random
 from .Temp import Temp
 import csv
 from time import sleep
-from .__main__ import generate
+from .__main__ import generate, sensors
 
 # Define sensors
 # sensors = []
@@ -18,8 +18,14 @@ def record_temps(temp_list):
     # place holder until sensors are hooked up
     while True:
         try:
-            temp_list.append(create_random_temp())
-            sleep(2)
+            if generate:
+                temp_list.append(create_random_temp())
+                sleep(2)
+            else:
+                for sensor in sensors:
+                    temp_list.append(create_temp(sensor))
+                sleep(2)
+
         except KeyboardInterrupt:
             return temp_list
             pass
@@ -28,6 +34,13 @@ def create_random_temp():
     sensor = "DEMO-SENSOR"
     timestamp = datetime.datetime.now()
     temp_c = random.randint(15,75)
+
+    return Temp(sensor, timestamp, temp_c)
+
+def create_temp(sensor):
+    temp_c = sensor.get_temperature(W1ThermSensor.DEGREES_C)
+    timestamp = datetime.datetime.now()
+    sensor = sensor.name
 
     return Temp(sensor, timestamp, temp_c)
 
