@@ -11,11 +11,11 @@ def record_temps(temp_list):
     # place holder until sensors are hooked up
     while True:
         try:
-            if __main__.generate:
+            if generate:
                 temp_list.append(create_random_temp())
                 sleep(2)
             else:
-                for sensor in __main__.sensors:
+                for sensor in sensors:
                     temp_list.append(create_temp(sensor))
                 sleep(2)
 
