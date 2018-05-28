@@ -1,6 +1,6 @@
 import sys, os
 from .functions import *
-from .__main__ import *
+from .__init__ import *
 
 menu_actions = {}
 temp_list = []
