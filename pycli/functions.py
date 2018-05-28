@@ -4,18 +4,18 @@ import random
 from .Temp import Temp
 import csv
 from time import sleep
-from .__main__ import *
+import __main__
 
 
 def record_temps(temp_list):
     # place holder until sensors are hooked up
     while True:
         try:
-            if generate:
+            if __main__.generate:
                 temp_list.append(create_random_temp())
                 sleep(2)
             else:
-                for sensor in sensors:
+                for sensor in __main__.sensors:
                     temp_list.append(create_temp(sensor))
                 sleep(2)
 
