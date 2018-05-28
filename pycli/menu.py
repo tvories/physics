@@ -1,7 +1,6 @@
 import sys, os
 from .functions import *
-from .__main__ import sensors
-from .__main__ import generate
+from .__main__ import *
 
 menu_actions = {}
 temp_list = []
