@@ -6,13 +6,6 @@ import csv
 from time import sleep
 from .__main__ import *
 
-# Define sensors
-# sensors = []
-# container_temp = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20,"0000046654e4")
-# ambient_temp = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20,"000005fafed1")
-
-# sensors.append(container_temp)
-# sensors.append(ambient_temp)
 
 def record_temps(temp_list):
     # place holder until sensors are hooked up
