@@ -20,8 +20,9 @@ def main():
     # Run command based on options.  If command not found, print options.
     if len(args) > 0:
         if args[0].lower() == 'menu':
-            if args[1].lower() == 'generate':
-                generate = True
+            if len(args) > 1:
+                if args[1].lower() == 'generate':
+                    generate = True
             main_menu()
         elif args[0].lower() == 'temp':
             get_all_temp()
