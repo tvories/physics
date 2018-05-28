@@ -12,6 +12,7 @@ def record_temps(temp_list):
     while True:
         try:
             if generate:
+                print('generating random temps')
                 temp_list.append(create_random_temp())
                 sleep(2)
             else:
