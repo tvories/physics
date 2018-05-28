@@ -4,7 +4,7 @@ import random
 from .Temp import Temp
 import csv
 from time import sleep
-from .__main__ import generate, sensors
+from .__main__ import *
 
 
 def record_temps(temp_list):
