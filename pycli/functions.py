@@ -40,6 +40,7 @@ def create_temp(sensor):
 def export_temp_csv(file_name, temp_list):
     # This function exports a list of temperatures to a csv file
     # It expects a temperature object
+    file_name = file_name + "-" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     with open(file_name, 'w') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(['Sensor', 'Time', 'Temp_C', 'Temp_F'])
