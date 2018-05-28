@@ -3,6 +3,8 @@ import datetime
 import random
 from .Temp import Temp
 import csv
+from time import sleep
+from .__main__ import generate
 
 # Define sensors
 # sensors = []
@@ -12,13 +14,15 @@ import csv
 # sensors.append(container_temp)
 # sensors.append(ambient_temp)
 
-def record_temps():
+def record_temps(temp_list):
     # place holder until sensors are hooked up
-    random_temp = create_random_temp()
-    # random_temp.get_temp()
-
-    with open('test.csv', 'w') as csvfile:
-        writer = csv.writer(csvfile, delimeter = ',', quotechar='|')
+    while True:
+        try:
+            temp_list.append(create_random_temp())
+            sleep(2)
+        except KeyboardInterrupt:
+            return temp_list
+            pass
 
 def create_random_temp():
     sensor = "DEMO-SENSOR"
