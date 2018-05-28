@@ -7,7 +7,8 @@ options = ['menu', 'temp']
 
 
 def get_all_temp():
-        print('temps!')
+        for sensor in sensors:
+            print("{sensor_name} temp_c is: {temp_c}".format(sensor_name=sensor.name, temp_c=sensor.get_temperature(W1ThermSensor.DEGREES_C)))
 
 def main():
     print('in main')
