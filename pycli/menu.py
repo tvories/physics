@@ -75,7 +75,7 @@ def back():
     menu_actions['main_menu']()
 
 def save_and_quit():
-    export_temp_csv('tempexport.csv', temp_list)
+    export_temp_csv('tempexport', temp_list)
     print("Done!  Goodbye!")
     exit()
 
