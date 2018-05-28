@@ -1,4 +1,5 @@
 import sys, os
+from .functions import record_temps
 
 menu_actions = {}
 
@@ -46,7 +47,8 @@ def record_menu():
 
 def print_recorded_temps():
     print("Recorded temps:\n")
-    print("They will be here.")
+    record_temps()
+    print("2. Print Again")
     print("9. Back")
     print("0. Quit")
     choice = input(" >>  ")
